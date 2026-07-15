@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+# Add project root to python path to avoid ModuleNotFoundError when running on Railway
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import logging
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 
